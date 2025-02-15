@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <!--
+    默认表单
+    -->
+    <input type="text">
+    <br>
+    <select>
+        <option selected>请选择城市</option>
+        <option>北京</option>
+        <option>上海</option>
+    </select>
+    <br>
+    <textarea></textarea>
+    <br>
+    <input type="checkbox" name="hobby">唱歌
+    <input type="checkbox" name="hobby">跳舞
+    <input type="radio" name="sex">男
+    <input type="radio" name="sex">女
+
+    <hr>
+
+    <!--
+    表单样式
+    -->
+
+    <!-- 
+    文本框：
+    .form-control：文本框样式
+    .form-control-lg和.form-control-sm：表单控件的大小
+    -->
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="Default input">
+            <input type="text" class="form-control form-control-lg" placeholder=".form-control-lg">
+            <input type="text" class="form-control form-control-sm" placeholder=".form-control-sm">
+        </div>
+    </div>
+
+    <!-- 文本域 -->
+    <div class="row">
+        <div class="col-md-3">
+            <textarea class="form-control"></textarea>
+        </div>
+    </div>
+
+    <!-- 
+    下拉框：
+    .form-select：下拉框样式
+    .form-select-lg和.form-select-sm：控件大小
+    -->
+    <div class="row">
+        <div class="col-md-3">
+            <select class="form-select">
+                <option selected>请选择城市</option>
+                <option>北京</option>
+                <option>上海</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- 
+    复选框：
+    .form-check（竖直）和.form-check-inline（水平）：复选框样式
+    .form-check-input和.form-check-label：元件样式
+    -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="hobby">
+                <label class="form-check-label">唱歌</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="hobby">
+                <label class="form-check-label">跳舞</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    单选框 
+    -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sex">
+                <label class="form-check-label">男</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sex">
+                <label class="form-check-label">女</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

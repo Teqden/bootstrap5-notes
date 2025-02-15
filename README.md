@@ -179,7 +179,61 @@ bootstrap对标题效果进行了修改并覆盖，并提供了.h1-.h6的对应�
 - `.table-light`
 - `.table-dark`
 
+### 4.8 表单
+#### 4.8.1 文本框和文本域
+- `.form-control`：文本框样式
+- `.form-control-lg`和`.form-control-sm`：控件大小
+```html
+<input type="text" class="form-control" placeholder="Default input">
+<input type="text" class="form-control form-control-lg" placeholder=".form-control-lg">
+
+<textarea class="form-control"></textarea>
+```
+
+#### 4.8.2 下拉框
+- `.form-select`：下拉框样式
+- `.form-select-lg`和`form-select-sm`：控件大小
+```html
+<select class="form-select">
+    <option selected>请选择城市</option>
+    <option>北京</option>
+    <option>上海</option>
+</select>
+```
+
+#### 4.8.3 单选框和多选框
+- `.form-check（竖直）`和`.form-check-inline（水平）`：复选框样式
+- `.form-check-input`和`.form-check-label`：元件样式
+
+单选框示例(`type="radio"`)：
+```html
+<div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="sex">
+        <label class="form-check-label">男</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="sex">
+        <label class="form-check-label">女</label>
+    </div>
+</div>
+```
+
+复选框示例(`type="checkbox"`)：
+```html
+<div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="hobby">
+        <label class="form-check-label">唱歌</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="hobby">
+        <label class="form-check-label">跳舞</label>
+    </div>
+</div>
+```
+
 ## 补充：小技巧
-1. 输入`!`然后敲击`enter`，可以自动生成基本的html结构
-2. 直接输入`.test`然后敲击`enter`，可直接创建包含test类的div元素；#test 则是id为test的div元素
-3. 直接输入`lorem`然后敲击`enter`，可生成填充性文档;输入`lorem3`可生成三个单词，输入`lorem*3`可生成三段话。
+1. 输入`!`然后敲击`enter`，可以自动生成基本的 html 结构
+2. 直接输入`.test`然后敲击`enter`，可直接创建包含 test 类的 div 元素；`#test` 则是 id 为 test 的 div 元素
+3. 直接输入`lorem`然后敲击`enter`，可生成填充性文档；输入`lorem3`可生成三个单词，输入`lorem*3`可生成三段话
