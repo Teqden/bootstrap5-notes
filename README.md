@@ -141,6 +141,44 @@ bootstrap对标题效果进行了修改并覆盖，并提供了.h1-.h6的对应�
 </ul>
 ```
 
+### 4.6 代码
+一般在个人博客上使用的比较频繁，用于显示代码风格。
+- `<code>`：显示单行内联代码
+- `<pre>`：显示多行代码块：代码会保留原本的格式，包括空格和换行
+- `<kbd>`：显示用户输入代码，如快捷键
+```html
+<code>这是一行代码</code>
+<p>请使用<kbd>ctrl</kbd>+<kbd>s</kbd>进行保存</p>
+```
+显示html代码需要使用字符实体
+```html
+<pre>
+    &lt;h2&gt;你好&lt;/h2&gt;
+</pre>
+```
+当长度超过指定值，可以添加滚动条
+```html
+<pre class="pre-scrollable">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum asperiores libero ipsa tempora iure, deserunt facere illo suscipit, molestiae beatae numquam in atque minus dicta quasi. Quisquam, accusamus! Minus, doloribus?
+</pre>
+```
+
+### 4.7 表格
+- `.table`：默认样式
+- `.table-bordered`：加竖直方向的边框
+- `.table-striped`：隔行换色
+- `.table-hover`：悬浮高亮
+
+对任意表格元素(table、tr、th、td)都可使用以下类来指定颜色：
+- `.table-primary`
+- `.table-secondary`
+- `.table-success`
+- `.table-danger`
+- `.table-warning`
+- `.table-info`
+- `.table-light`
+- `.table-dark`
+
 ## 补充：小技巧
 1. 输入`!`然后敲击`enter`，可以自动生成基本的html结构
 2. 直接输入`.test`然后敲击`enter`，可直接创建包含test类的div元素；#test 则是id为test的div元素
