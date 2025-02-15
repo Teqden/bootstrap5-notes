@@ -117,6 +117,30 @@ bootstrap对标题效果进行了修改并覆盖，并提供了.h1-.h6的对应�
     <div class="text-center">居中对齐</div>
 ```
 
+### 4.5 列表
+#### 4.5.1 普通列表
+- 无序列表（`<ul><li>...</li></ul>`）
+- 有序列表（`<ol><li>...</li></ol>`）
+- 自定义列表（`<dl><dt>...</dt><dd>...</dd></dl>`）
+
+#### 4.5.2 列表样式
+- `.list-unstyled`：去点列表
+```html
+<ul class="list-unstyled">
+    <li>去点列表选项1</li>
+    <li>去点列表选项2</li>
+    <li>去点列表选项3</li>
+</ul>
+```
+- `.list-inline`和.`list-inline-item`：内联列表
+```html
+<ul class="list-inline">
+    <li class="list-inline-item">内联列表选项1</li>
+    <li class="list-inline-item">内联列表选项2</li>
+    <li class="list-inline-item">内联列表选项3</li>
+</ul>
+```
+
 ## 补充：小技巧
 1. 输入`!`然后敲击`enter`，可以自动生成基本的html结构
 2. 直接输入`.test`然后敲击`enter`，可直接创建包含test类的div元素；#test 则是id为test的div元素
