@@ -1,6 +1,6 @@
-<h1>Bootstrap 学习笔记</h1>
+<h1>Bootstrap5 学习笔记</h1>
 
-这是我观看 B 站视频 [优极限-2021最新完整版bootstrap教程-乐字节全栈念小安](https://www.bilibili.com/video/BV1TU4y1p7zU?spm_id_from=333.788.videopod.episodes&vd_source=1d1e1ee322fb5e86e15f95cb909ee1be) 学习Bootstrap的笔记。教程中使用的是Bootstrap3，而我现在使用的是Bootstrap5，很多类名已被移除或改动，因此在学习过程中，我还参考 [Bootstrap官方文档](https://getbootstrap.com/docs/5.3/getting-started/introduction/) 更改和添加了一些新的内容在笔记中。
+这是我跟着 B 站视频 [优极限|2021最新完整版bootstrap教程](https://www.bilibili.com/video/BV1TU4y1p7zU?spm_id_from=333.788.videopod.episodes&vd_source=1d1e1ee322fb5e86e15f95cb909ee1be) 学习Bootstrap的学习笔记。教程中使用的是Bootstrap3老版本，而我现在使用的是Bootstrap5，因此很多类名都已被移除或修改。在学习过程中，我还参考着 [Bootstrap官方文档](https://getbootstrap.com/docs/5.3/getting-started/introduction/) 以及 [Bootstrap5教程|菜鸟教程](https://www.runoob.com/bootstrap5/bootstrap5-tutorial.html) ，为笔记添加了一些新的内容。
 
 ## 1. 准备
 ### 1.1 安装使用
@@ -14,11 +14,11 @@
 ### 1.3 载入引入
 1. 在title标签下，载入bootstrap的css：<br/>
 ```html
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 ```
 2. 在body标签中最下方，引入bootstrap的js组件：<br/>
 ```html
-<script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 ```
 
 ## 2. 布局容器
@@ -242,6 +242,115 @@ bootstrap对标题效果进行了修改并覆盖，并提供了.h1-.h6的对应�
 ```html
 <button class="btn btn-info" onclick="alert('Hello')" disabled>按钮</button>
 ```
+
+## 5. 插件
+### 5.1 导航及导航栏
+`.nav`：左对齐导航 (默认)
+- 布局
+    - `.justify-content-center`：居中对齐导航
+    - `.justify-content-end`：右对齐导航
+    - `.flex-column`：垂直导航
+    - `.nav-justified`：设置导航项齐行等宽显示
+    - `.navbar-expand-xxl|xl|lg|md|sm`：创建响应式的导航栏 (大屏幕水平铺开，小屏幕垂直堆叠)
+    - 创建导航栏汉堡菜单：在按钮上添加 `class="navbar-toggler"`, `data-bs-toggle="collapse"` 与 `data-target="#thetarget"` 类，然后在设置了 `class="collapse navbar-collapse"` 类的 div 上包裹导航内容（链接）, div 元素上的 id 匹配按钮 `data-target` 的上指定的 id
+- 样式
+    - `.nav-tabs`：将导航转化为选项卡
+    - `.nav-pills`：将导航项设置成胶囊形状
+- 颜色
+    - `.bg-primary`, `.bg-success`, `.bg-info`, `.bg-warning`, `.bg-danger`, `.bg-secondary`, `.bg-dark` 和 `.bg-light`
+    - 暗色背景（黑底白字）：`<nav class="navbar navbar-expand-sm bg-dark navbar-dark">...</nav>`
+    - 浅色背景（白底黑字）：`<nav class="navbar navbar-expand-sm bg-light navbar-light">...</nav>`
+    - `.navbar-brand` 类用于高亮显示品牌/Logo，`.navbar-brand` 类设置图片自适应导航栏
+- 其他
+    - `.disabled`：设置为不可选；对于选中的选项使用 `.active` 类进行标记
+    - `.navbar-text` 类来设置导航栏上非链接文本，可以保证水平对齐，颜色与内边距一样
+    - `.fixed-top`和`.fixed-bottom`：使导航栏固定在头部或底部
+- 示例
+    - ```html
+        <!-- .navbar-brand 类用于高亮显示品牌/Logo，.navbar-brand 类设置图片自适应导航栏。 -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="../img/default-img.jpg" alt="Logo" style="width:40px;">
+                Logo
+            </a>
+            ...
+        </nav>
+        ```
+    - ```html
+        <!-- 动态选项卡 -->
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active container" id="home">1</div>
+                <div class="tab-pane container" id="menu1">2</div>
+                <div class="tab-pane container" id="menu2">3</div>
+            </div>
+        </div>
+        ```
+    - ```html
+        <!-- 下拉菜单 -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Logo</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        ```
+    - ```html
+        <!-- 导航栏 汉堡菜单 -->
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        ```
 
 ## 补充：小技巧
 1. 输入`!`然后敲击`enter`，可以自动生成基本的 html 结构
