@@ -1,6 +1,6 @@
 <h1>Bootstrap 学习笔记</h1>
 
-这是我观看 B 站视频 [优极限-2021最新完整版bootstrap教程-乐字节全栈念小安](https://www.bilibili.com/video/BV1TU4y1p7zU?spm_id_from=333.788.videopod.episodes&vd_source=1d1e1ee322fb5e86e15f95cb909ee1be) 学习Bootstrap的笔记，在过程中，我还参阅了[Bootstrap官方文档](https://getbootstrap.com/docs/5.3/getting-started/introduction/)。
+这是我观看 B 站视频 [优极限-2021最新完整版bootstrap教程-乐字节全栈念小安](https://www.bilibili.com/video/BV1TU4y1p7zU?spm_id_from=333.788.videopod.episodes&vd_source=1d1e1ee322fb5e86e15f95cb909ee1be) 学习Bootstrap的笔记。教程中使用的是Bootstrap3，而我现在使用的是Bootstrap5，很多类名已被移除或改动，因此在学习过程中，我还参考 [Bootstrap官方文档](https://getbootstrap.com/docs/5.3/getting-started/introduction/) 更改和添加了一些新的内容在笔记中。
 
 ## 1. 准备
 ### 1.1 安装使用
@@ -231,6 +231,16 @@ bootstrap对标题效果进行了修改并覆盖，并提供了.h1-.h6的对应�
         <label class="form-check-label">跳舞</label>
     </div>
 </div>
+```
+
+#### 4.8.4 按钮
+可通过btn类给其他元素设置按钮效果(如a标签、span标签)。
+- 基础样式：`.btn`
+- 附加样式：`.btn-primary（蓝）`、`.btn-info（青）`、`.btn-success（绿）`、`.btn-warning（黄）`、`.btn-danger（红）`、`.btn-link（链接）`
+- 设置按钮大小：`.btn-sm（小）`、`.btn-lg（大）`
+- 按钮禁用：在标签中添加`disabled`属性
+```html
+<button class="btn btn-info" onclick="alert('Hello')" disabled>按钮</button>
 ```
 
 ## 补充：小技巧
